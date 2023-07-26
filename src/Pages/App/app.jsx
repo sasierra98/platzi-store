@@ -7,6 +7,7 @@ import NotFound from "../NotFound/index.jsx";
 import SignIn from "../SignIn/index.jsx";
 import { Navbar } from "../../Components/Navbar/index.jsx";
 import '../../App.css';
+import {ShoppingCartProvider} from "../../Context/index.jsx";
 
 const AppRoutes = () => {
   return useRoutes([
@@ -22,10 +23,12 @@ const AppRoutes = () => {
 function App() {
 
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </ShoppingCartProvider>
   )
 }
 
