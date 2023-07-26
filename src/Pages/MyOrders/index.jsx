@@ -1,8 +1,10 @@
+import {Layout} from "../../Components/Layout/index.jsx";
+
 function MyOrders() {
   return (
-    <div className={"bg-red-100"}>
+    <Layout>
       My Orders
-    </div>
+    </Layout>
   )
 }
 

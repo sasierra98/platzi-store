@@ -1,8 +1,10 @@
+import {Layout} from "../../Components/Layout/index.jsx";
+
 function MyAccount() {
   return (
-    <div className={"bg-red-100"}>
+    <Layout>
       My Account
-    </div>
+    </Layout>
   )
 }
 
