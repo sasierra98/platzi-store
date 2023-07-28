@@ -7,6 +7,11 @@ import {OrderCard} from "../OrderCard/index.jsx";
 export const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext);
 
+  const handleDelete = (id) => {
+    const filteredProducts = context.cartProducts.filter(product => product.id !== id);
+    context.setCartProducts(filteredProducts);
+  }
+
   return (
     <aside className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex flex-col fixed right-0 border border-black rounded-lg bg-white`}>
       <div className={'flex justify-between items-center p-6'}>
@@ -23,9 +28,11 @@ export const CheckoutSideMenu = () => {
           context.cartProducts.map((product) => (
             <OrderCard
               key={product.id}
+              id={product.id}
               title={product.title}
               imageUrl={product.image}
               price={product.price}
+              handleDelete={handleDelete}
             />
           ))
         }
