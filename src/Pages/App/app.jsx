@@ -8,6 +8,7 @@ import SignIn from "../SignIn/index.jsx";
 import { Navbar } from "../../Components/Navbar/index.jsx";
 import '../../App.css';
 import {ShoppingCartProvider} from "../../Context/index.jsx";
+import {CheckoutSideMenu} from "../../Components/CheckoutSideMenu/index.jsx";
 
 const AppRoutes = () => {
   return useRoutes([
@@ -27,6 +28,7 @@ function App() {
       <BrowserRouter>
         <AppRoutes />
         <Navbar />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   )

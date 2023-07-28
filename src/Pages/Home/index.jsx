@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.escuelajs.co/api/v1/products');
+        const response = await fetch('https://fakestoreapi.com/products?limit=100');
         const data = await response.json();
         setItems(data);
       } catch (e) {
@@ -22,6 +22,7 @@ function Home() {
   return (
     <Layout>
       Home
+      {/*{console.log(items)}*/}
       <div className={'grid gap-4 grid-cols-4 w-full max-w-screen-lg'}>
         {
           items?.map((item) => (
