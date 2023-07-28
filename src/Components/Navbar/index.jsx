@@ -22,7 +22,7 @@ export const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to={"/all"}
+            to={"/"}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
