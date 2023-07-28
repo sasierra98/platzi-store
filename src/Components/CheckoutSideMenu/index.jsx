@@ -3,6 +3,7 @@ import './style.css';
 import {useContext} from "react";
 import {ShoppingCartContext} from "../../Context/index.jsx";
 import {OrderCard} from "../OrderCard/index.jsx";
+import {totalPrice} from "../../utils/index.js";
 
 export const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext);
@@ -36,6 +37,12 @@ export const CheckoutSideMenu = () => {
             />
           ))
         }
+      </div>
+      <div className={'px-6'}>
+        <p className={'flex justify-between items-center'}>
+          <span className={'font-light'}>Total:</span>
+          <span className={'font-medium text-2xl'}>${totalPrice(context.cartProducts)}</span>
+        </p>
       </div>
     </aside>
   )
